@@ -459,8 +459,8 @@ def configure_windows_toolchain(repository_ctx):
   options = {
       "%{default_cpu}": default_architecture,
       "%{default_toolchain_name}": toolchains[default_architecture],
-      "%{msys_x64_content}": _get_escaped_windows_msys_crosstool_content(repository_ctx),
-      "%{msys_x64_mingw_content}": _get_escaped_windows_msys_crosstool_content(repository_ctx, use_mingw = True),
+      # "%{msys_x64_content}": _get_escaped_windows_msys_crosstool_content(repository_ctx),
+      # "%{msys_x64_mingw_content}": _get_escaped_windows_msys_crosstool_content(repository_ctx, use_mingw = True),
       "%{msys_x64_opt_content}": "",
       "%{msys_x64_dbg_content}": "",
       "%{msys_x64_coverage}": ""

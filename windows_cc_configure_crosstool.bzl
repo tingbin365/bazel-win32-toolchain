@@ -126,53 +126,53 @@ toolchain {
   linking_mode_flags { mode: DYNAMIC }
 }
 
-toolchain {
-  toolchain_identifier: "msys_x64"
-%{msys_x64_content}
+# toolchain {
+#   toolchain_identifier: "msys_x64"
+# %{msys_x64_content}
 
-  compilation_mode_flags {
-    mode: DBG
-%{msys_x64_dbg_content}
-  }
-  compilation_mode_flags {
-    mode: OPT
-%{msys_x64_opt_content}
-  }
-  linking_mode_flags { mode: DYNAMIC }
+#   compilation_mode_flags {
+#     mode: DBG
+# %{msys_x64_dbg_content}
+#   }
+#   compilation_mode_flags {
+#     mode: OPT
+# %{msys_x64_opt_content}
+#   }
+#   linking_mode_flags { mode: DYNAMIC }
 
-%{msys_x64_coverage}
+# %{msys_x64_coverage}
 
-  feature {
-    name: 'fdo_optimize'
-    provides: 'profile'
-    flag_set {
-      action: 'c-compile'
-      action: 'c++-compile'
-      expand_if_all_available: 'fdo_profile_path'
-      flag_group {
-        flag: '-fprofile-use=%{fdo_profile_path}'
-        flag: '-fprofile-correction',
-      }
-    }
-  }
-}
+#   feature {
+#     name: 'fdo_optimize'
+#     provides: 'profile'
+#     flag_set {
+#       action: 'c-compile'
+#       action: 'c++-compile'
+#       expand_if_all_available: 'fdo_profile_path'
+#       flag_group {
+#         flag: '-fprofile-use=%{fdo_profile_path}'
+#         flag: '-fprofile-correction',
+#       }
+#     }
+#   }
+# }
 
-toolchain {
-  toolchain_identifier: "msys_x64_mingw"
-  abi_version: "local"
-  abi_libc_version: "local"
-  builtin_sysroot: ""
-  compiler: "mingw-gcc"
-  host_system_name: "local"
-  needsPic: false
-  target_libc: "mingw"
-  target_cpu: "x64_windows"
-  target_system_name: "local"
+# toolchain {
+#   toolchain_identifier: "msys_x64_mingw"
+#   abi_version: "local"
+#   abi_libc_version: "local"
+#   builtin_sysroot: ""
+#   compiler: "mingw-gcc"
+#   host_system_name: "local"
+#   needsPic: false
+#   target_libc: "mingw"
+#   target_cpu: "x64_windows"
+#   target_system_name: "local"
 
-%{msys_x64_mingw_content}
+# %{msys_x64_mingw_content}
 
-  linking_mode_flags { mode: DYNAMIC }
-}
+#   linking_mode_flags { mode: DYNAMIC }
+# }
 """
 
 
